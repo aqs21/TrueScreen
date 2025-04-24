@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- BOOTSTRAP CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: #f5f6fa;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar {
+        background-color: #2f3640;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar .user {
+        font-weight: bold;
+    }
+
+    .navbar .logout {
+        background-color: #e84118;
+        color: white;
+        padding: 8px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+
+    .card {
+        background: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .card h2 {
+        margin-bottom: 30px;
+        color: #2f3640;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 16px;
+        color: white;
+        background-color: #0984e3;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        margin: 10px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #74b9ff;
+    }
+</style>
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="user">👋 Welcome, {{ username }}</div>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>Welcome to Interview</h2>
+            <!-- Updated links -->
+            <a href="{{ url_for('schedule') }}" class="btn">📅 Schedule Meeting</a>
+            <a href="{{ url_for('join') }}"     class="btn">🔗 Join Meeting</a>
+        </div>
+    </div>
+</body>
+</html>
