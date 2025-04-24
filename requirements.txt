@@ -1,0 +1,8 @@
+Flask
+flask-socketio
+python-socketio
+eventlet
+opencv-python
+requests
+numpy
+gunicorn
